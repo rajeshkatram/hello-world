@@ -9,6 +9,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables: 
+ - name: developBranch
+   value: 'refs/heads/develop'
 steps:
 - task: DownloadSecureFile@1
   inputs:
@@ -25,8 +28,19 @@ steps:
     goals: 'package'
 - task: CopyFiles@2
   displayName: 'Store Artifact: Copy Jar to: $(build.artifactstagingdirectory)'
-  #condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
+  condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
   inputs:
     SourceFolder: '$(system.defaultworkingdirectory)'
     Contents: '**/target/*.jar'
     TargetFolder: '$(build.artifactstagingdirectory)'
+- task: CopyFiles@2
+  displayName: 'Store Artifact: Copy Pom to: $(build.artifactstagingdirectory)'
+  condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
+  inputs:
+   SourceFolder: '$(system.defaultworkingdirectory)'
+   Contents: 'pom.xml'
+   TargetFolder: '$(build.artifactstagingdirectory)'    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
+
