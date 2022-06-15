@@ -24,8 +24,9 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 - task: CopyFiles@2
-  displayName: 'Retrieve Artifact: Copy Jar to: $(build.artifactstagingdirectory)'
+  displayName: 'Store Artifact: Copy Jar to: $(build.artifactstagingdirectory)'
+  #condition: eq(variables['Build.SourceBranch'], variables['developBranch'])
   inputs:
-   SourceFolder: '$(Pipeline.Workspace)/drop/target'
-   Contents: '*.jar'
-   TargetFolder: '$(System.DefaultWorkingDirectory)'
+    SourceFolder: '$(system.defaultworkingdirectory)'
+    Contents: '**/target/*.jar'
+    TargetFolder: '$(build.artifactstagingdirectory)'
