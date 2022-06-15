@@ -10,6 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'avio-settings.xml'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
