@@ -42,15 +42,10 @@ local.properties
 # Studio-specific #
 # --------------- #
 target/
-<<<<<<< Updated upstream
 .mule/**
 .mule/**/*
 .DS_Store
 velocity.log
-=======
-.mule/
-.DS_Store
-velocity.log
 build
 reports/
->>>>>>> Stashed changes
+

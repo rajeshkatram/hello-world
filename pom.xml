@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< Updated upstream
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -11,41 +11,19 @@
 	<packaging>mule-application</packaging>
 
 	<name>mule-hello-world</name>
-=======
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.mycompany</groupId>
-	<artifactId>hello-world</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
-	<packaging>mule-application</packaging>
-
-	<name>hello-world</name>
->>>>>>> Stashed changes
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-<<<<<<< Updated upstream
-		<app.runtime>4.4.0-20211227</app.runtime>
-		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
-=======
 		<app.runtime>4.4.0-20230320</app.runtime>
 		<mule.maven.plugin.version>3.8.2</mule.maven.plugin.version>
->>>>>>> Stashed changes
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>
-<<<<<<< Updated upstream
-				<version>3.0.0</version>
-=======
 				<version>3.2.0</version>
->>>>>>> Stashed changes
 			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
@@ -53,8 +31,6 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 			</plugin>
-<<<<<<< Updated upstream
-=======
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -79,7 +55,7 @@
 						</goals>
 						<configuration>
 							<systemPropertyVariables>
-								<!-- Allows plugin to use the Maven version we are running with  -->
+								<!-- Allows plugin to use the Maven version we are running with -->
 								<maven.home>${maven.home}</maven.home>
 							</systemPropertyVariables>
 							<appDir>${basedir}</appDir>
@@ -94,7 +70,6 @@
 					</execution>
 				</executions>
 			</plugin>
->>>>>>> Stashed changes
 		</plugins>
 	</build>
 
@@ -102,19 +77,12 @@
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-http-connector</artifactId>
-<<<<<<< Updated upstream
-			<version>1.6.0</version>
-=======
 			<version>1.7.3</version>
->>>>>>> Stashed changes
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-sockets-connector</artifactId>
-<<<<<<< Updated upstream
-			<version>1.2.2</version>
-=======
 			<version>1.2.3</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
@@ -152,14 +120,12 @@
 			<groupId>com.avioconsulting.mule</groupId>
 			<artifactId>mule-custom-logger</artifactId>
 			<version>2.0.1</version>
->>>>>>> Stashed changes
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
 
 	<repositories>
 		<repository>
-<<<<<<< Updated upstream
 			<id>anypoint-exchange-v2</id>
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
@@ -181,7 +147,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-=======
+		<repository>
 			<id>avio-sandbox-exchange</id>
 			<name>avio-sandbox-exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/f2ea2cb4-c600-4bb5-88e8-e952ff5591ee/maven</url>
@@ -193,9 +159,7 @@
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
 		</repository>
->>>>>>> Stashed changes
 	</repositories>
-
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
@@ -207,5 +171,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 </project>
