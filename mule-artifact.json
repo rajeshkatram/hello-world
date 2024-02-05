@@ -1,3 +1,8 @@
 {
+<<<<<<< Updated upstream
   "minMuleVersion": "4.4.0"
+=======
+  "minMuleVersion": "4.4.0",
+    "secureProperties": ["anypoint.platform.client_secret", "birthdate"]
+>>>>>>> Stashed changes
 }
